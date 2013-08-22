@@ -1,0 +1,15 @@
+<% provide(:title, "Categories") %>
+<div class="span6 offset4">
+<% for category in @categories %>
+  <div class="category">
+    <h3><%= link_to h(category.name), category %></h3>
+    <div class="actions">
+      <%= link_to "Edit", edit_category_path(category) %> |
+      <%= link_to "Destroy", category, :confirm => 'Are you sure?', :method => :delete %>
+    </div>
+  </div>
+<% end %>
+</div>
+<div class="pull-right offset1">
+	<p><%= link_to "New Category", new_category_path %></p>
+</div>
